@@ -1,0 +1,5 @@
+rootProject.name = 'comp512-zk'
+include 'clnt'
+include 'dist'
+include 'task'
+

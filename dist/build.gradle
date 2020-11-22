@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+version '1.0-SNAPSHOT'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation 'org.apache.zookeeper:zookeeper:3.6.2'
+    implementation project(':task')
+    testImplementation 'junit:junit:4.12'
+}
