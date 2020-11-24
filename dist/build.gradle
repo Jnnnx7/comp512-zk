@@ -18,3 +18,15 @@ dependencies {
     implementation project(':task')
     testImplementation 'junit:junit:4.12'
 }
+
+task env_set(type: Exec){
+    commandLine './build_server.sh'
+}
+
+
+task runsrvr(type: JavaExec){
+    dependsOn env_set
+    main = 'dist.DistProcess'
+    classpath = files('./build/libs/dist-1.0-SNAPSHOT.jar') + files('../task/build/libs/task-1.0-SNAPSHOT.jar')
+}
+

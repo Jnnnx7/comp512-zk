@@ -1,3 +1,5 @@
+package dist;
+
 import java.io.*;
 
 import java.util.*;
@@ -15,7 +17,6 @@ import org.apache.zookeeper.data.*;
 import org.apache.zookeeper.KeeperException.Code;
 
 import task.DistTask;
-import task.MCPi;
 
 // TODO
 // Replace XX with your group number.
@@ -70,9 +71,7 @@ public class DistProcess implements Watcher
 	{
 		//Try to create an ephemeral node to be the master, put the hostname and pid of this process as the data.
 		// This is an example of Synchronous API invocation as the function waits for the execution and no callback is involved..
-		System.out.println("create master...");
 		zk.create("/dist07/master", pinfo.getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);
-		System.out.println("master created.");
 	}
 
 	public void process(WatchedEvent e)
